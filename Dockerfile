@@ -18,7 +18,9 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /tmp/downloaded_packages/ /tmp/*.rds
 
 # Instalar paquetes de r que sean necesarios
-RUN R -e "install.packages('shiny', repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages(c('shiny','htmlwidgets','dplyr','DT','echarts4r','bs4Dash'), repos='http://cran.rstudio.com/')"
+
+
 
 # Limpieza
 RUN rm -rf /tmp/downloaded_packages/ /tmp/*.rds

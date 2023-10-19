@@ -1,0 +1,101 @@
+"trip_id","subscriber_type","bike_id","bike_type","start_time","start_station_id","start_station_name","end_station_id","end_station_name","duration_minutes"
+"17151360","Walk Up","1899","classic",2018-04-21 15:29:10,2563,"Davis at Rainey Street",NA,"Stolen",4302
+"17210718","Weekender","919","classic",2018-04-27 21:45:22,2571,"Red River & 8th Street",NA,"Stolen",3903
+"22812672","Single Trip (Pay-as-you-ride)","93","classic",2020-09-13 16:45:42,2575,"Riverside/South Lamar",NA,"Stolen",1114
+"17187153","Local365","2095","classic",2018-04-25 15:25:04,2497,"Capitol Station / Congress & 11th",NA,"Stolen",1463
+"16898448","Walk Up","1857","classic",2018-03-18 22:51:20,2501,"5th & Bowie",NA,"Stolen",3806
+"22813735","24 Hour Walk Up Pass","209","classic",2020-09-13 18:26:08,3793,"28th/Rio Grande",NA,"Stolen",1016
+"22814499","Single Trip (Pay-as-you-ride)","303","classic",2020-09-13 19:38:36,3794,"4th/Sabine",NA,"Stolen",948
+"16675492","U.T. Student Membership","874","classic",2018-02-09 18:56:59,3797,"21st & University",NA,"Stolen",6832
+"16796969","U.T. Student Membership","265","classic",2018-03-06 00:27:55,3798,"21st & Speedway @PCL",NA,"Stolen",919
+"17134756","U.T. Student Membership","2122","classic",2018-04-19 17:20:23,3799,"23rd & San Jacinto @ DKR Stadium",NA,"Stolen",5498
+"22863406","3-Day Weekender","19127","electric",2020-09-20 16:45:39,3293,"East 2nd/Pedernales",NA,"Stolen",6705
+"16863172","Walk Up","1795","classic",2018-03-14 21:23:26,2542,"Plaza Saltillo",NA,"Stolen",2529
+"22780645","Local31","18132","electric",2020-09-08 18:05:36,2548,"Guadalupe/West Mall @ University Co-op",NA,"Stolen",4062
+"27544444","Local31","21680","electric",2022-08-21 19:14:50,2561,"12th/San Jacinto @ State Capitol Visitors Garage","7189","28th/Rio",31
+"27763295","Student Membership","21516","electric",2022-09-08 22:41:40,2561,"12th/San Jacinto @ State Capitol Visitors Garage","7189","28th/Rio",19
+"28046913","Student Membership","17460","electric",2022-10-02 00:14:39,2561,"12th/San Jacinto @ State Capitol Visitors Garage","7189","28th/Rio",21
+"28155139","3-Day Weekender","22599","electric",2022-10-11 11:05:25,2561,"12th/San Jacinto @ State Capitol Visitors Garage","7189","28th/Rio",14
+"27914067","Explorer","16276","electric",2022-09-21 09:21:42,2562,"8th/San Jacinto","7189","28th/Rio",38
+"27936354","Student Membership","21790","electric",2022-09-22 20:24:57,2562,"8th/San Jacinto","7189","28th/Rio",24
+"27676711","Student Membership","16322","electric",2022-09-02 02:08:34,2562,"8th/San Jacinto","7189","28th/Rio",16
+"27076378","Local31","21703","electric",2022-07-02 12:02:01,2563,"Rainey/Driskill","7189","28th/Rio",30
+"27073701","Student Membership","21789","electric",2022-07-02 01:13:42,2563,"Rainey/Driskill","7189","28th/Rio",20
+"27534260","Student Membership","21464","electric",2022-08-20 22:16:35,2563,"Rainey/Driskill","7189","28th/Rio",50
+"27434667","3-Day Weekender","21576","electric",2022-08-10 13:02:24,2563,"Rainey/Driskill","7189","28th/Rio",30
+"27534266","Student Membership","21821","electric",2022-08-20 22:17:14,2563,"Rainey/Driskill","7189","28th/Rio",49
+"27534256","Student Membership","21789","electric",2022-08-20 22:15:27,2563,"Rainey/Driskill","7189","28th/Rio",51
+"27434677","3-Day Weekender","22174","electric",2022-08-10 13:02:46,2563,"Rainey/Driskill","7189","28th/Rio",30
+"27623759","Local365","19847","electric",2022-08-28 13:31:21,2563,"Rainey/Driskill","7189","28th/Rio",26
+"27434673","3-Day Weekender","19233","electric",2022-08-10 13:02:34,2563,"Rainey/Driskill","7189","28th/Rio",30
+"27861934","Student Membership","18684","electric",2022-09-16 23:48:22,2563,"Rainey/Driskill","7189","28th/Rio",53
+"28353810","Pay-as-you-ride","21772","electric",2022-10-30 14:32:38,2563,"Rainey/Driskill","7189","28th/Rio",30
+"28353818","Pay-as-you-ride","19688","electric",2022-10-30 14:33:38,2563,"Rainey/Driskill","7189","28th/Rio",29
+"27512411","Explorer","21740","electric",2022-08-18 22:35:39,2565,"6th/Trinity","7189","28th/Rio",15
+"28478304","Local31","21546","electric",2022-11-13 18:36:22,2565,"6th/Trinity",NA,"28th/Rio",58
+"28502013","Student Membership","21689","electric",2022-11-17 22:40:36,2565,"6th/Trinity",NA,"28th/Rio",16
+"28459437","Student Membership","21551","electric",2022-11-10 22:59:52,2565,"6th/Trinity",NA,"28th/Rio",16
+"27923052","Student Membership","21543","electric",2022-09-21 19:38:00,2566,"Electric Drive/Sandra Muraida Way @ Pfluger Ped Bridge","7189","28th/Rio",24
+"28139640","Student Membership","425","classic",2022-10-09 22:02:58,2566,"Electric Drive/Sandra Muraida Way @ Pfluger Ped Bridge","7189","28th/Rio",20
+"28287293","Local31","19239","electric",2022-10-23 15:14:58,2566,"Electric Drive/Sandra Muraida Way @ Pfluger Ped Bridge","7189","28th/Rio",36
+"28327797","Student Membership","18929","electric",2022-10-27 18:18:54,2566,"Electric Drive/Sandra Muraida Way @ Pfluger Ped Bridge","7189","28th/Rio",13
+"28068152","Pay-as-you-ride","21480","electric",2022-10-03 18:33:08,2566,"Electric Drive/Sandra Muraida Way @ Pfluger Ped Bridge","7189","28th/Rio",21
+"28546910","Explorer","19488","electric",2022-11-28 16:40:21,2566,"Electric Drive/Sandra Muraida Way @ Pfluger Ped Bridge",NA,"28th/Rio",34
+"27609268","Local365","19739","electric",2022-08-27 11:26:53,2822,"East 6th/Robert T. Martinez","7189","28th/Rio",23
+"27760671","Local365","21650","electric",2022-09-08 18:37:25,2823,"East 5th/Broadway @ Capital Metro HQ","7189","28th/Rio",27
+"28215638","Pay-as-you-ride","19602","electric",2022-10-16 15:47:11,2823,"East 5th/Broadway @ Capital Metro HQ","7189","28th/Rio",26
+"28102316","Local365","18181","electric",2022-10-06 17:56:28,2823,"East 5th/Broadway @ Capital Metro HQ","7189","28th/Rio",27
+"28132482","3-Day Weekender","21666","electric",2022-10-09 13:20:41,2568,"East 11th/Victory Grill","7189","28th/Rio",37
+"27151640","3-Day Weekender","19198","electric",2022-07-10 14:42:32,2569,"East 11th/San Marcos","7189","28th/Rio",30
+"28188938","Pay-as-you-ride","21516","electric",2022-10-14 10:51:48,2570,"South Congress/Academy","7189","28th/Rio",88
+"27097306","Local31","21742","electric",2022-07-04 14:21:09,2571,"8th/Red River","7189","28th/Rio",36
+"27365070","Student Membership","16845","electric",2022-08-02 13:37:10,2571,"8th/Red River","7189","28th/Rio",13
+"27893506","Local31","19704","electric",2022-09-19 13:45:28,2571,"8th/Red River","7189","28th/Rio",48
+"28358464","Student Membership","22461","electric",2022-10-30 21:59:58,2571,"8th/Red River","7189","28th/Rio",19
+"28457858","Pay-as-you-ride","57","classic",2022-11-10 18:14:35,2571,"8th/Red River",NA,"28th/Rio",28
+"27185193","Local31","19789","electric",2022-07-13 20:05:13,2572,"Barton Springs Pool","7189","28th/Rio",25
+"27185210","Pay-as-you-ride","17751","electric",2022-07-13 20:06:33,2572,"Barton Springs Pool","7189","28th/Rio",24
+"27149290","Local365","19682","electric",2022-07-10 11:03:10,2572,"Barton Springs Pool","7189","28th/Rio",35
+"27239445","Local31","22174","electric",2022-07-19 18:07:52,2574,"Zilker Park","7189","28th/Rio",22
+"27239457","Pay-as-you-ride","19821","electric",2022-07-19 18:08:58,2574,"Zilker Park","7189","28th/Rio",21
+"27239680","3-Day Weekender","21714","electric",2022-07-19 18:28:48,2574,"Zilker Park","7189","28th/Rio",36
+"27223756","Student Membership","16288","electric",2022-07-17 20:34:23,2574,"Zilker Park","7189","28th/Rio",40
+"27628784","Student Membership","21747","electric",2022-08-28 19:53:32,2574,"Zilker Park","7189","28th/Rio",32
+"27452878","3-Day Weekender","16395","electric",2022-08-12 13:35:55,2574,"Zilker Park","7189","28th/Rio",54
+"27384059","Student Membership","21849","electric",2022-08-04 16:47:29,2574,"Zilker Park","7189","28th/Rio",27
+"27452881","3-Day Weekender","21790","electric",2022-08-12 13:36:12,2574,"Zilker Park","7189","28th/Rio",53
+"27899316","Pay-as-you-ride","21679","electric",2022-09-19 20:30:34,2574,"Zilker Park","7189","28th/Rio",27
+"27102035","Local31","16395","electric",2022-07-04 22:21:32,2575,"Riverside/South Lamar","7189","28th/Rio",36
+"27102046","Pay-as-you-ride","19418","electric",2022-07-04 22:23:16,2575,"Riverside/South Lamar","7189","28th/Rio",35
+"27608406","Student Membership","19677","electric",2022-08-27 10:23:17,2575,"Riverside/South Lamar","7189","28th/Rio",31
+"27536460","Student Membership","19376","electric",2022-08-21 08:20:47,2575,"Riverside/South Lamar","7189","28th/Rio",27
+"28227062","Local31","21725","electric",2022-10-17 18:25:03,2575,"Riverside/South Lamar","7189","28th/Rio",50
+"28114390","Student Membership","19250","electric",2022-10-07 18:48:44,2575,"Riverside/South Lamar","7189","28th/Rio",32
+"28545826","Student Membership","21447","electric",2022-11-28 14:59:23,2575,"Riverside/South Lamar",NA,"28th/Rio",15
+"27254767","Local31","22449","electric",2022-07-21 13:09:38,4879,"16th/San Antonio","7189","28th/Rio",12
+"27238920","Local31","21725","electric",2022-07-19 17:20:02,4879,"16th/San Antonio","7189","28th/Rio",14
+"27156949","Student Membership","21457","electric",2022-07-10 20:14:55,4879,"16th/San Antonio","7189","28th/Rio",7
+"27132166","Local31","21472","electric",2022-07-08 16:23:21,4879,"16th/San Antonio","7189","28th/Rio",7
+"27656588","Student Membership","19677","electric",2022-08-31 12:34:10,4879,"16th/San Antonio","7189","28th/Rio",9
+"27466108","Student Membership","19821","electric",2022-08-13 19:48:25,4879,"16th/San Antonio","7189","28th/Rio",9
+"27526583","Local31","19386","electric",2022-08-20 12:00:49,4879,"16th/San Antonio","7189","28th/Rio",39
+"27515869","Local31","21803","electric",2022-08-19 12:13:59,4879,"16th/San Antonio","7189","28th/Rio",10
+"27512139","Explorer","21541","electric",2022-08-18 21:54:43,4879,"16th/San Antonio","7189","28th/Rio",48
+"27433650","Local31","21430","electric",2022-08-10 10:53:53,4879,"16th/San Antonio","7189","28th/Rio",6
+"27604470","Student Membership","23277","electric",2022-08-26 20:42:59,4879,"16th/San Antonio","7189","28th/Rio",61
+"27639028","Local31","19552","electric",2022-08-29 18:43:34,4879,"16th/San Antonio","7189","28th/Rio",15
+"27483745","Local365","1511","classic",2022-08-16 06:37:18,4879,"16th/San Antonio","7189","28th/Rio",11
+"27645917","Student Membership","21680","electric",2022-08-30 13:30:27,4879,"16th/San Antonio","7189","28th/Rio",5
+"28014076","Local31","22449","electric",2022-09-29 14:48:38,4879,"16th/San Antonio","7189","28th/Rio",20
+"28031202","Student Membership","21733","electric",2022-09-30 21:05:31,4879,"16th/San Antonio","7189","28th/Rio",11
+"27774740","Student Membership","16855","electric",2022-09-09 20:35:26,4879,"16th/San Antonio","7189","28th/Rio",8
+"27940639","Explorer","21464","electric",2022-09-23 11:17:48,4879,"16th/San Antonio","7189","28th/Rio",98
+"27966341","Student Membership","873","classic",2022-09-25 12:41:23,4879,"16th/San Antonio","7189","28th/Rio",11
+"27772418","Explorer","22453","electric",2022-09-09 17:37:36,4879,"16th/San Antonio","7189","28th/Rio",47
+"27743344","Local31","19432","electric",2022-09-07 13:27:48,4879,"16th/San Antonio","7189","28th/Rio",37
+"27768791","Student Membership","19403","electric",2022-09-09 13:34:05,4879,"16th/San Antonio","7189","28th/Rio",28
+"27790082","3-Day Weekender","21546","electric",2022-09-11 12:06:28,4879,"16th/San Antonio","7189","28th/Rio",42
+"27959648","Explorer","18684","electric",2022-09-24 18:59:53,4879,"16th/San Antonio","7189","28th/Rio",41
+"28017707","Explorer","22530","electric",2022-09-29 18:51:41,4879,"16th/San Antonio","7189","28th/Rio",60
+"27779067","Local31","19271","electric",2022-09-10 11:44:36,4879,"16th/San Antonio","7189","28th/Rio",25
+"27994432","Explorer","18684","electric",2022-09-27 19:05:51,4879,"16th/San Antonio","7189","28th/Rio",19
