@@ -17,6 +17,8 @@ El archivo Dockerfile sera con el que construiremos el contenedor,en cambio los 
   - 📄 Dockerfile
     - 📁 mi_app
         - 📄 app.R
+        - 🖼️ docker_1.png
+        - 💹 trip_austin.csv        
   - 📄 shiny-server.conf
   - 📄 shiny-server.sh
   - 📄 .gitignore
