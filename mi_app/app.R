@@ -1,12 +1,3 @@
-#
-# This is a Shiny web application. You can run the application by clicking
-# the 'Run App' button above.
-#
-# Find out more about building applications with Shiny here:
-#
-#    http://shiny.rstudio.com/
-#
-
 library(shiny)
 library(htmlwidgets)
 library(dplyr)
@@ -15,19 +6,48 @@ library(echarts4r)
 library(bs4Dash)
 
 
-ui <- fluidPage(
-
-    # Application title
-    titlePanel("Shiny app demo para ejecutarse en contenedor"),
-    fluidRow(imageOutput("imagen")),
-    
-    fluidRow(actionButton(inputId = "boton_carga_at",label =  "Carga")),
-    fluidRow(width=12,box(title = "Datos",dataTableOutput("datos_bigquery_at",width = "100%",height = "600px"),
-                          width = 6,status = "lightblue",headerBorder = FALSE,collapsible = FALSE,closable = FALSE,elevation = 2),
-             box(title = "Grafico",echarts4rOutput("grafico_bigquery_at",width = "100%",height = "600px"),
-                 width = 6,status = "lightblue",headerBorder = FALSE,collapsible = FALSE,closable = FALSE,elevation = 2),
-             box(title = "Grafico",echarts4rOutput("grafico_torta_trip_id_at",width = "100%",height = "600px"),
-                 width = 12,status = "lightblue",headerBorder = FALSE,collapsible = FALSE,closable = FALSE,elevation = 2))
+# ui <- fluidPage(
+# 
+#     # Application title
+#     titlePanel("Shiny app demo para ejecutarse en contenedor"),
+#     fluidRow(imageOutput("imagen")),
+#     
+#     fluidRow(actionButton(inputId = "boton_carga_at",label =  "Carga")),
+#     fluidRow(width=12,box(title = "Datos",dataTableOutput("datos_bigquery_at",width = "100%",height = "600px"),
+#                           width = 6,status = "lightblue",headerBorder = FALSE,collapsible = FALSE,closable = FALSE,elevation = 2),
+#              box(title = "Grafico",echarts4rOutput("grafico_bigquery_at",width = "100%",height = "600px"),
+#                  width = 6,status = "lightblue",headerBorder = FALSE,collapsible = FALSE,closable = FALSE,elevation = 2),
+#              box(title = "Grafico",echarts4rOutput("grafico_torta_trip_id_at",width = "100%",height = "600px"),
+#                  width = 12,status = "lightblue",headerBorder = FALSE,collapsible = FALSE,closable = FALSE,elevation = 2))
+# )
+ui <-  dashboardPage(
+  
+  dashboardHeader(title = "Shiny-app Docker demo "),
+  dashboardSidebar(side = "top", visible = FALSE, status = "teal",
+                   sidebarMenu(
+                     id = "sidebar",
+                     menuItem("Inicio",tabName = "menu1",
+                              icon=icon("laptop-medical"),
+                              selected = TRUE)
+                   ),
+  ),
+  dashboardBody(
+    tabItems(
+      tabItem(tabName = "menu1",
+              
+              titlePanel("Shiny app demo para ejecutarse en contenedor"),
+              fluidRow(imageOutput("imagen")),
+              
+              fluidRow(actionButton(inputId = "boton_carga_at",label =  "Carga")),
+              fluidRow(width=12,box(title = "Datos",dataTableOutput("datos_bigquery_at",width = "100%",height = "600px"),
+                                    width = 6,status = "lightblue",headerBorder = FALSE,collapsible = FALSE,closable = FALSE,elevation = 2),
+                       box(title = "Grafico",echarts4rOutput("grafico_bigquery_at",width = "100%",height = "600px"),
+                           width = 6,status = "lightblue",headerBorder = FALSE,collapsible = FALSE,closable = FALSE,elevation = 2),
+                       box(title = "Grafico",echarts4rOutput("grafico_torta_trip_id_at",width = "100%",height = "600px"),
+                           width = 12,status = "lightblue",headerBorder = FALSE,collapsible = FALSE,closable = FALSE,elevation = 2))
+              
+      )))
+  
 )
 
 # Define server logic required to draw a histogram

@@ -1,9 +1,6 @@
 # Shiny apps en Docker
 
-Este es un ejemplo básico para ejecutar shiny-apps en contenedores
-Docker.Para ejecutar el contenedor que se muestra en este tutorial se
-asume que Docker ya esta instalado.Sin embargo a continuación te dejo el
-enlace para la descarga de [Docker](https://www.docker.com/)
+Este es un ejemplo básico para ejecutar shiny-apps en contenedores Docker.Para ejecutar el contenedor que se muestra en este tutorial se asume que Docker ya esta instalado.Sin embargo a continuación te dejo el enlace para la descarga de [Docker](https://www.docker.com/)
 
 ## Estructura
 
@@ -22,15 +19,13 @@ El archivo Dockerfile sera con el que construiremos el contenedor,en cambio los 
   - 📄 shiny-server.conf
   - 📄 shiny-server.sh
   - 📄 .gitignore
+  - 🖼 image_app.png 
       
 ```
 
 ### Dockerfile
 
-El archivo docker puede ser modificado segun el tipo de aplicación que
-se utilice.En este caso si deseas seguir trabajando con shiny apps,y
-agregar otras features,puedes agregar la instalación de otras librerias
-para R.
+El archivo docker puede ser modificado segun el tipo de aplicación que se utilice.En este caso si deseas seguir trabajando con shiny apps,y agregar otras features,puedes agregar la instalación de otras librerias para R.
 
 ``` docker
 # Descarga de una version de r del paquete tidyverse
@@ -92,10 +87,11 @@ Una vez lista la imagen shiny_app,ejecutamos la siguiente linea para ejecutar nu
 ``` docker
 docker run -d -p 5000:5000 shiny_app 
 ```
+
 ## Acceso al contenedor
 
 Si todos los pasos anteriores se desarrollaron de forma correcta,el contenedor se debe estar ejecutando en la siguiente dirección.
 
 [127.0.0.1:5000](http://127.0.0.1:5000)
 
-
+![app-shiny](image_app.png)
