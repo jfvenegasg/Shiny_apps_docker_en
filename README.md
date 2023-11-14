@@ -1,18 +1,18 @@
-# Shiny apps en Docker
+# Shiny apps in Docker
 
-Este es un tutorial para ejecutar shiny-apps en el servicio Cloud Run de Google Cloud Platform.Para desplegar una shiny-app se utilizaran imagenes docker,la cual primero se testea de forma local y luego se migra a la nube.En este tutorial se asume que ya tienes instalada Docker,sin embargo a continuación te dejo el enlace para la descarga de [Docker](#0)
+This is a tutorial to run shiny-apps in the Cloud Run service of Google Cloud Platform. To deploy a shiny-app, docker images will be used, which are first tested locally and then migrated to the cloud. In this tutorial It assumes that you already have Docker installed, however below I leave you the link to download [Docker](https://www.docker.com/)
 
-## Estructura
+## Structure
 
-El siguiente proyecto considera como archivos y elementos principales,el archivo **Dockerfile**,la carpeta **mi_app**, y los archivos *shiny-server.conf* y *shiny-server.sh*.
+The following project considers as main files and elements the **Dockerfile** file, the **my_app** folder, and the *shiny-server.conf* and *shiny-server.sh* files.
 
-El archivo Dockerfile sera con el que construiremos el contenedor,en cambio los otros archivos son necesarios para la ejecución de la shiny app.
+The Dockerfile file will be the one with which we will build the container, however the other files are necessary for the execution of the shiny app.
 
 ``` docker
 - 📁 Shiny_apps_docker
   - 📄 README.md
   - 📄 Dockerfile
-    - 📁 mi_app
+    - 📁 my_app
         - 📄 app.R
         - 🖼️ docker_1.png
         - 💹 trip_austin.csv        
@@ -31,13 +31,13 @@ El archivo Dockerfile sera con el que construiremos el contenedor,en cambio los 
 
 ### Dockerfile
 
-El archivo docker puede ser modificado segun el tipo de aplicación que se utilice.En este caso si deseas seguir trabajando con shiny apps,y agregar otras features,puedes agregar la instalación de otras librerias para R.
+The docker file can be modified depending on the type of application being used. In this case, if you want to continue working with shiny apps, and add other features, you can add the installation of other libraries for R.
 
 ``` docker
-# Descarga de una version de r del paquete tidyverse
+# Downloading an r version of the tidyverse package
 FROM rocker/shiny-verse:latest
 
-# Librerias de uso general
+# Libraries of general use
 RUN apt-get update && apt-get install -y \
     curl \
     sudo \
@@ -53,24 +53,25 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/ \
     && rm -rf /tmp/downloaded_packages/ /tmp/*.rds
 
-# Instalar paquetes de r que sean necesarios
-RUN R -e "install.packages('shiny', repos='http://cran.rstudio.com/')"
+# Install r packages
+RUN R -e "install.packages(c('shiny','htmlwidgets','dplyr','DT','echarts4r','bs4Dash'), repos='http://cran.rstudio.com/')"
 
-# Limpieza
+
+# Cleaning
 RUN rm -rf /tmp/downloaded_packages/ /tmp/*.rds
 
-# Copiar archivos de configuracion en la imagen docker
+# Copy configurations files in the docker image
 COPY shiny-server.conf  /etc/shiny-server/shiny-server.conf
 
-# Copiar shiny app en la imagen docker
-COPY mi_app /srv/shiny-server/
+# Copy shiny app in the docker image
+COPY my_app /srv/shiny-server/
 
 RUN rm /srv/shiny-server/index.html
 
-# Habilitar el puerto 5000 para la shiny app
+# Enable 5000 port
 EXPOSE 5000
 
-# Copiar el archivo de ejecucion de la shiny app en la imagen docker
+# Copy shiny server in the docker image
 COPY shiny-server.sh /usr/bin/shiny-server.sh
 
 USER shiny
@@ -80,88 +81,88 @@ CMD ["/usr/bin/shiny-server"]
 
 ## Build
 
-Para construir la imagen docker llamada shiny_app,se usa la siguiente linea.
+To build the docker image called shiny_app, the following line is used.
 
 ``` docker
 docker build -t shiny_app .
 ```
 
-Si la imagen se construye bien,esta sera la que migremos a la nube.
+If the image is built well, this will be the one we migrate to the cloud.
 
 ## Run
 
-Una vez lista la imagen shiny_app,ejecutamos la siguiente linea para ejecutar nuestra imagen dentro de un contenedor de forma local,la app tendra expuesto el puerto 5000.
+Once the shiny_app image is ready, we execute the following line to run our image inside a container locally, the app will have port 5000 exposed.
 
 ``` docker
 docker run -d -p 5000:5000 shiny_app 
 ```
 
-## Acceso al contenedor
+## Access to container
 
-Si todos los pasos anteriores se desarrollaron de forma correcta,el contenedor se debe estar ejecutando en la siguiente dirección local.
+If all the previous steps were carried out correctly, the container should be running at the following local address.
 
 [127.0.0.1:5000](http://127.0.0.1:5000)
 
 ![app-shiny](image_app.png)
 
-## Migrar imagen Docker
+## Push docker image
 
-Para migrar la imagen ya construida,primero debemos habilitar el servicio Artifact Registry en Google Cloud Platform.Si lo habilitamos de forma correcta deberiamos ver la siguiente pantalla.
+To migrate the already built image, we must first enable the Artifact Registry service in Google Cloud Platform. If we enable it correctly we should see the following screen.
 
 ![artifact_rgistry_gcp](artifact_registry.png)
 
-Luego en este servicio debemos crear un repositorio,el cual puede ser creado desde la consola de GCP o desde el menu **Create Repository**.
+Then in this service we must create a repository, which can be created from the GCP console or from the **Create Repository** menu.
 
-![crear repositorio](create_repo.png)
+![create repository](create_repo.png)
 
-Cuando creamos el repositorio elegimos el format como Docker,el mode como standar y la region en este caso la fijare en southamerica-west1[Santiago].Una vez creado el repositorio configuramos de forma local nuestro docker para poder hacer push o pull a las imagenes.
+When we create the repository we choose the format as Docker, the mode as standard and the region in this case I will set it to southamerica-west1[Santiago]. Once the repository is created we configure our docker locally to be able to push or pull the images .
 
 ``` dockerfile
 gcloud auth configure-docker southamerica-west1-docker.pkg.dev
 ```
 
-Luego tenemos le tenemos que etiquetar a nuestra shiny_app con la ruta del directorio del repositorio de imagenes en la nube.
+Then we have to tag our shiny_app with the directory path of the cloud image repository.
 
 ``` dockerfile
-docker tag shiny_app:latest southamerica-west1-docker.pkg.dev/driven-saga-403916/docker-repo/shiny_app:latest
+docker tag shiny_app_en:latest southamerica-west1-docker.pkg.dev/driven-saga-403916/docker-repo/shiny_app_en:latest
 ```
 
-Una vez etiquetada la imagen,le podemos dar a push a la imagen con la siguiente linea
+Once the image has been tagged, we can push the image with the following line.
 
 ``` dockerfile
-docker tag shiny_app:latest southamerica-west1-docker.pkg.dev/driven-saga-403916/docker-repo/shiny_app:latest
+docker push southamerica-west1-docker.pkg.dev/driven-saga-403916/docker-repo/shiny_app_en:latest
 ```
 
-Si la imagen fue cargada correctamente la podremos ver en el repositorio de Artifact Registry como se ve en la imagen.
+If the image was uploaded correctly we can see it in the Artifact Registry repository as seen in the image.
 
-![imagen en el repo docker](image_repo_docker.png)
+![image in the repo docker](image_repo_docker.png)
 
-Como podemos ver en la imagen,ya tenemos la imagen de nuestra app shiny.De esta forma ahora la podemos desplegar con el servicio Cloud Run.
+As we can see in the image, we already have the image of our shiny app. This way we can now deploy it with the Cloud Run service.
 
-## Desplegar con Cloud Run
+## Deploy with Cloud Run
 
-Una vez accedemos al servicio Cloud Run,tenemos que crear un servicio en donde se abrira el siguiente menu.
+Once we access the Cloud Run service, we have to create a service where the following menu will open.
 
-![Configuracion cloud run](cloud_run_1.png)
+![Configuration Cloud Run](cloud_run_1.png)
 
-Desde el menu de configuracion del servicio tenemos que seleccionar en la primera opcion **Container image URL**,la ruta en donde se encuentra nuestra imagen en el repositorio,luego asignamos el **Service Name** y la **Region**.
+From the service configuration menu we have to select in the first option **Container image URL**, the path where our image is located in the repository, then we assign the **Service Name** and the **Region** .
 
-Mas abajo seleccionamos el valor de 1 en la opcion **Minimum number of instances**,para que el primer despliegue no sea tan lento.
+Below we select the value of 1 in the **Minimum number of instances** option, so that the first deployment is not so slow.
 
-Ademas en el menu **Authentication**,seleccionamos la opcion ***Allow unauthenticated invocations***
+Also in the **Authentication** menu, we select the option ***Allow unauthenticated invocations***
 
-Finalmente en el ultimo modulo de configuracion seleccionamos el valor de 5000 en la opcion **Container port**,que corresponde al puerto asignamos en el dockerfile.
+Finally, in the last configuration module we select the value of 5000 in the **Container port** option, which corresponds to the port we assigned in the dockerfile.
 
-Si la imagen se despliega de forma correcta,la deberiamos poder ver como se ve en la imagen.
+If the image is displayed correctly, we should be able to see it as it looks in the image.
 
-![servicio desplegado en cloud run](cloud_run_2.png)
+![Deploy service in cloud run](cloud_run_2.png)
 
-Finalmente si queremos acceder al servicio,podemos entrar al URL que se nos muestra en la imagen.
+Finally, if we want to access the service, we can enter the URL shown in the image.
 
-Se los dejo a continuación.
+I leave them below.
 
-<https://shiny-app-vvrixyvk3q-uc.a.run.app>
+<https://shiny-app-en-vvrixyvk3q-uc.a.run.app/>
 
-Aca se una vista de la shiny app.
+Here is a view of the shiny app.
 
-![Shiny app desplegada](cloud_run_3.png)
+![Shiny app deploy](cloud_run_3.png)

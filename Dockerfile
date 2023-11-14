@@ -1,7 +1,7 @@
-# Descarga de una version de r del paquete tidyverse
+# Downloading an r version of the tidyverse package
 FROM rocker/shiny-verse:latest
 
-# Librerias de uso general
+# Libraries of general use
 RUN apt-get update && apt-get install -y \
     curl \
     sudo \
@@ -17,26 +17,25 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/ \
     && rm -rf /tmp/downloaded_packages/ /tmp/*.rds
 
-# Instalar paquetes de r que sean necesarios
+# Install r packages
 RUN R -e "install.packages(c('shiny','htmlwidgets','dplyr','DT','echarts4r','bs4Dash'), repos='http://cran.rstudio.com/')"
 
 
-
-# Limpieza
+# Cleaning
 RUN rm -rf /tmp/downloaded_packages/ /tmp/*.rds
 
-# Copiar archivos de configuracion en la imagen docker
+# Copy configurations files in the docker image
 COPY shiny-server.conf  /etc/shiny-server/shiny-server.conf
 
-# Copiar shiny app en la imagen docker
-COPY mi_app /srv/shiny-server/
+# Copy shiny app in the docker image
+COPY my_app /srv/shiny-server/
 
 RUN rm /srv/shiny-server/index.html
 
-# Habilitar el puerto 5000 para la shiny app
+# Enable 5000 port
 EXPOSE 5000
 
-# Copiar el archivo de ejecucion de la shiny app en la imagen docker
+# Copy shiny server in the docker image
 COPY shiny-server.sh /usr/bin/shiny-server.sh
 
 USER shiny
